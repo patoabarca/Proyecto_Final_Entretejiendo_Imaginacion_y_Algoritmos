@@ -1,0 +1,16 @@
+# Ignorar archivo con claves sensibles
+.env
+
+# Ignorar archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+
+# Ignorar entornos virtuales
+venv/
+.venv/
+env/
+.env/
