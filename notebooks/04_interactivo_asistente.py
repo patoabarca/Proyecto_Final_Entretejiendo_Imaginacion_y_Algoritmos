@@ -9,10 +9,24 @@ import pandas as pd
 from textwrap import dedent
 from openai import OpenAI
 from dotenv import load_dotenv
+from pathlib import Path
+import os
+from pathlib import Path
+from dotenv import load_dotenv, find_dotenv
+
+# Fuerza a cargar el .env de la RAÍZ del repo (sube un nivel desde /notebooks)
+repo_root = Path(__file__).resolve().parents[1]
+env_path = repo_root / ".env"
+load_dotenv(dotenv_path=env_path if env_path.exists() else find_dotenv(), override=True)
+
+print("Usando .env en:", env_path if env_path.exists() else find_dotenv())
+val = os.getenv("OPENAI_API_KEY")
+print("OPENAI_API_KEY cargada:", bool(val), "| longitud:", (len(val) if val else 0))
 
 # --- API ---
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # --- Base de conocimiento ---
 DF_PATH = "data/base_conocimiento_afiliaciones_clean.csv"
@@ -56,23 +70,21 @@ def construir_mensajes(fila, pregunta: str):
     base = (fila.get("respuesta_validada") or fila.get("contenido") or fila.get("titulo","")).strip()
 
     reglas_system = dedent("""
-    Rol: asistente interno de IOMA. Tono institucional.
+        Rol: Asistente de Afiliaciones de IOMA  
+    Público: agentes en Delegaciones y App IOMA Digital  
+    Tono: institucional, claro y preciso  
 
     Reglas:
-    - Usá SIEMPRE la BASE como núcleo. No inventes ni contradigas la BASE.
-    - Al final, incluí SIEMPRE UNO O DOS  parrafos de “Contexto: …”.
-    - El contexto debe aportar valor (definición/propósito/criterio general vinculado a la BASE), evitando obviedades o frases genéricas.
-      Si realmente no hay nada útil, escribí: “Contexto: no aplica”.
-    - Si la BASE es breve, podés ampliarla con 1–2 aclaraciones generales (p. ej., propósito del documento o condición típica),
-      sin agregar plazos/condiciones que no figuren en la BASE.
-    - No cites URLs ni números de norma que no estén en la BASE. Si falta un dato, escribí “No consta en la normativa adjunta”
-      y derivá a Afiliaciones (SLA: 24 h).
-    - Extensión total ≤350 palabras.
+    - Basate EXCLUSIVAMENTE en la BASE para pasos y requisitos.
+    - Si falta un dato, colocá "No consta en la normativa adjunta" y derivá a Afiliaciones (SLA: 24 h).
+    - Extensión total ≤ 350 palabras.
 
-    Formato de salida:
-    - Lista breve o pasos/checklist (según corresponda).
-    - Cierre obligatorio: “Fuente: base de conocimiento vigente”.
-    - Línea obligatoria al final: “Contexto: …”
+    Respuesta debe incluir:
+    1. Checklist o pasos necesarios (listas o numeradas).
+    2. Cierre: "Fuente: base de conocimiento vigente".
+    3. Contexto ampliado con **dos subsecciones**:
+       - **Términos clave**: al menos 3 viñetas con definiciones.
+       - **Objetivo y buenas prácticas**: al menos 3 viñetas sobre propósito del trámite y recomendaciones.
     """)
 
     user_contenido = dedent(f"""
