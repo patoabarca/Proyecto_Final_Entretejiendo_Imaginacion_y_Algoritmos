@@ -1,4 +1,4 @@
-# Asistente de Afiliaciones — v6 (Texto + Imagen)
+# Asistente de Afiliaciones 
 
 Los agentes reciben gran volumen de consultas repetitivas, con normativa dispersa y respuestas poco uniformes. Esto genera demoras, dependencia de referentes y riesgo de inconsistencias.
 
