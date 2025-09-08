@@ -1,3 +1,10 @@
+> 📌 **Nota previa**  
+> Además de este repositorio, existe un **repo mínimo listo para desplegar en Streamlit**, disponible en:  
+> 👉 [asistente-afiliaciones-streamlit](https://github.com/patoabarca/asistente-afiliaciones-streamlit/tree/main)
+>
+> La aplicación ya se encuentra en línea y puede ejecutarse en:  
+> 🌐 [https://asistente-afiliaciones.streamlit.app/](https://asistente-afiliaciones.streamlit.app/)
+
 # Asistente de Afiliaciones — v6 (Texto + Imagen)
 
 Los agentes reciben gran volumen de consultas repetitivas, con normativa dispersa y respuestas poco uniformes. Esto genera demoras, dependencia de referentes y riesgo de inconsistencias.
@@ -48,6 +55,18 @@ Todo corre en una **notebook** con **UI de ipywidgets**, cachea imágenes por te
   - generación/uso de imagen por tema con **cache** en `notebooks/imgs/`,
   - **UI** con banner y estilos IOMA,
   - celda `snapshot_github()` para exportar una **vista estática** (banner + JSON + imagen) antes de subir a GitHub.
+
+## Conclusiones
+
+El proyecto demostró cómo un asistente basado en **prompt engineering** y una **base de conocimiento estructurada** puede mejorar la gestión interna de Afiliaciones en IOMA.
+
+A través de la integración de texto e imagen:
+
+- se logró un prototipo funcional que responde con **claridad, trazabilidad y uniformidad normativa**,
+- se comprobó la **viabilidad técnica y económica** (bajo costo y fácil escalabilidad),
+- y se generaron insumos reutilizables (FAQs, plantillas, diagramas) que pueden extenderse a otras áreas.
+
+Este trabajo sienta bases sólidas para una futura implementación institucional y para la exploración de nuevas aplicaciones de IA en la gestión pública.
 
 ## Estructura del repositorio
 
