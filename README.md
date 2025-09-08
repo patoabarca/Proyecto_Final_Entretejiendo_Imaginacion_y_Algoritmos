@@ -1,3 +1,10 @@
+> **Nota previa**  
+> Además de este repositorio, existe un **repo mínimo listo para desplegar en Streamlit**, disponible en:  
+> 👉 [asistente-afiliaciones-streamlit](https://github.com/patoabarca/asistente-afiliaciones-streamlit/tree/main)
+>
+> La aplicación ya se encuentra en línea y puede ejecutarse en:  
+> 🌐 [https://asistente-afiliaciones.streamlit.app/](https://asistente-afiliaciones.streamlit.app/)
+
 # Asistente de Afiliaciones — v6 (Texto + Imagen)
 
 Los agentes reciben gran volumen de consultas repetitivas, con normativa dispersa y respuestas poco uniformes. Esto genera demoras, dependencia de referentes y riesgo de inconsistencias.
