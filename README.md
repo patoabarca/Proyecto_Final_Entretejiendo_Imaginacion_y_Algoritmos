@@ -72,12 +72,26 @@ Este trabajo sienta bases sólidas para una futura implementación institucional
 
 PROYECTO_FINAL_ENTRETEJIENDO_IMAGINACION_Y_ALGORITMOS/
 ├─ data/
+
 │ └─ base_conocimiento_afiliaciones_clean.csv # Base (FAQs validadas)
+
+
 ├─ docs/
+
 │ └─ Preentrega2_Abarca_Patricia.pdf # Documento previo
+
+
 ├─ notebooks/
+
 │ ├─ asistente_afiliaciones.ipynb # Notebook principal (UI + snapshot)
+
 │ └─ imgs/ # Cache de imágenes (auto)
+
+
 ├─ Muestra.png # Captura (opcional)
+
+
 ├─ .gitignore
+
+
 └─ README.md
