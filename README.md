@@ -5,7 +5,7 @@
 > La aplicación ya se encuentra en línea y puede ejecutarse en:  
 > 🌐 [https://asistente-afiliaciones.streamlit.app/](https://asistente-afiliaciones.streamlit.app/)
 
-# Asistente de Afiliaciones — v6 (Texto + Imagen)
+# Asistente de Afiliaciones — (Texto + Imagen)
 
 Los agentes reciben gran volumen de consultas repetitivas, con normativa dispersa y respuestas poco uniformes. Esto genera demoras, dependencia de referentes y riesgo de inconsistencias.
 
@@ -17,8 +17,8 @@ Todo corre en una **notebook** con **UI de ipywidgets**, cachea imágenes por te
 ## Viabilidad
 
 - **Técnica:** Python, OpenAI API, CSV y Jupyter/VS Code.
-- **Económica:** costo bajo (texto con `gpt-4o-mini`; imágenes cacheadas para no re-generar).
-- **Tiempo:** MVP en ~4 semanas (curado de FAQs, diseño v6, pruebas y medición).
+- **Económica:** costo bajo (texto con `gpt-4o`; imágenes cacheadas para no re-generar).
+- **Tiempo:** MVP en ~4 semanas (curado de FAQs, diseño, pruebas y medición).
 
 ## Objetivos (MVP)
 
