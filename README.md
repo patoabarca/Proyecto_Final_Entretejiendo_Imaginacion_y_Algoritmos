@@ -66,7 +66,7 @@ Incluye:
 
 ## Ejemplo de salida
 
-![Ejemplo de salida del asistente](notebooks/imgs/Muestra_1.png)
+![Ejemplo de salida del asistente]([notebooks/imgs/Muestra_1.png](https://github.com/patoabarca/Proyecto_Final_Entretejiendo_Imaginacion_y_Algoritmos/blob/main/notebooks/Muestra_1.png))
 
 ## Conclusiones
 
