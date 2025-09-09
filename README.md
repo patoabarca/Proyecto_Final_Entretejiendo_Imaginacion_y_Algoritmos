@@ -29,32 +29,40 @@ Todo corre en una **notebook** con **UI de ipywidgets**, cachea imágenes por te
 
 ## Metodología
 
-1. **Base de conocimiento (CSV):** normativa y respuestas validadas (`estado ∈ {vigente, en revisión}`).
-2. **Prompt v6:** reglas fijas (JSON estricto) + contexto por turno con `<<BASE>>`.
-3. **Búsqueda ligera:** ranking por tokens / título / palabras_clave (top-1).
-4. **UI en notebook:** cuadro de texto + salida JSON + imagen 256×256.
-5. **Cache de imágenes** por **tema** (genera 1024×1024 → mini 256×256, reutiliza si ya existe).
-6. **Snapshot para GitHub:** banner + JSON + imagen (sin widgets).
+El proyecto se llevó a cabo en 4 etapas:
 
-## Tecnologías y herramientas
+1. **Curado de la base de conocimiento (CSV):** recopilación y validación de 30–40 FAQs con metadatos de vigencia.
+2. **Diseño de prompts:** compactos, con reglas fijas de salida JSON y derivación responsable.
+3. **Construcción del prototipo en notebook:** carga de FAQs, búsqueda ligera top-1, chat con memoria e imágenes institucionales de apoyo.
+4. **Pruebas y ajustes:** validación en consultas simuladas, medición de consistencia y reducción de tiempos de respuesta.
 
-- **Python + OpenAI API**
-  - Texto: `gpt-4o-mini` (cambiable por `gpt-4o`)
-  - Imágenes: `dall-e-3` (fallback `gpt-image-1`)
-- **ipywidgets** para la UI en la notebook
-- **CSV** como fuente de FAQs validadas
-- **GitHub** para versionado y visualización (con snapshot estático)
-- (Opcional) **Diagrams.net/Excalidraw** para visualizaciones de proceso
+Cada procedimiento se eligió para garantizar simplicidad, reproducibilidad y bajo costo, cumpliendo con el alcance del curso.
 
-## Implementación (resumen)
+## Técnicas de Fast Prompting
 
-- Prompt principal **v6** implementado en Python.
-- Notebook con:
-  - carga de CSV y búsqueda de FAQ,
-  - chat con memoria (historial),
-  - generación/uso de imagen por tema con **cache** en `notebooks/imgs/`,
-  - **UI** con banner y estilos IOMA,
-  - celda `snapshot_github()` para exportar una **vista estática** (banner + JSON + imagen) antes de subir a GitHub.
+- **Contexto reducido (`<<BASE>>`)** para evitar alucinaciones y mantener foco en normativa validada.
+- **Compactación de prompts**: estructura JSON estricta con límite de tokens para eficiencia.
+- **Respuestas numeradas o en listas** para mayor precisión y claridad.
+- **Derivación responsable** cuando la información no consta en la base.
+
+## Implementación
+
+El asistente fue implementado en Python, integrado en una notebook con `ipywidgets` para la UI.  
+Incluye:
+
+- carga y búsqueda en el CSV de FAQs,
+- generación de respuestas en JSON,
+- cache de imágenes por tema (optimización de recursos),
+- snapshot estático para visualización en GitHub.
+
+> ⚠️ Los ejemplos de código y prompts de imagen se documentan en el PDF (`docs/Preentrega2_Abarca_Patricia.pdf`) y en el notebook (`notebooks/asistente_afiliaciones.ipynb`).
+
+## Resultados
+
+- Las salidas en JSON cumplen con los criterios de **claridad, trazabilidad y uniformidad normativa**.
+- Los prompts compactos redujeron el consumo de tokens y, por ende, el costo por consulta.
+- La cache de imágenes evitó regeneraciones innecesarias, optimizando uso de la API.
+- El prototipo alcanzó los objetivos del MVP: consistencia normativa ≥ 90% y reducción de tiempos de respuesta en pruebas simuladas.
 
 ## Conclusiones
 
@@ -68,6 +76,12 @@ A través de la integración de texto e imagen:
 
 Este trabajo sienta bases sólidas para una futura implementación institucional y para la exploración de nuevas aplicaciones de IA en la gestión pública.
 
+## Referencias
+
+- Documentación oficial (circulares internas, protocolos de Afiliaciones).
+- [OpenAI API Docs](https://platform.openai.com/docs)
+- [Streamlit Docs](https://docs.streamlit.io)
+
 ## Estructura del repositorio
 
 PROYECTO_FINAL_ENTRETEJIENDO_IMAGINACION_Y_ALGORITMOS/
@@ -75,11 +89,9 @@ PROYECTO_FINAL_ENTRETEJIENDO_IMAGINACION_Y_ALGORITMOS/
 
 │ └─ base_conocimiento_afiliaciones_clean.csv # Base (FAQs validadas)
 
-
 ├─ docs/
 
 │ └─ Preentrega2_Abarca_Patricia.pdf # Documento previo
-
 
 ├─ notebooks/
 
@@ -87,11 +99,8 @@ PROYECTO_FINAL_ENTRETEJIENDO_IMAGINACION_Y_ALGORITMOS/
 
 │ └─ imgs/ # Cache de imágenes (auto)
 
-
 ├─ Muestra.png # Captura (opcional)
 
-
 ├─ .gitignore
-
 
 └─ README.md
