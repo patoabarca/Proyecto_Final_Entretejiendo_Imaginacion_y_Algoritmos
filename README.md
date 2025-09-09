@@ -5,7 +5,7 @@
 > La aplicación ya se encuentra en línea y puede ejecutarse en:  
 > 🌐 [https://asistente-afiliaciones.streamlit.app/](https://asistente-afiliaciones.streamlit.app/)
 
-# 🤖 Asistente de Afiliaciones — (Texto + Imagen)
+# Asistente de Afiliaciones — (Texto + Imagen)
 
 Los agentes reciben de manera recurrente preguntas sobre documentación, plazos, circuitos internos y criterios de aplicación normativa, que ya se encuentran descriptos en circulares y protocolos, pero cuya consulta resulta poco ágil en la práctica.
 
