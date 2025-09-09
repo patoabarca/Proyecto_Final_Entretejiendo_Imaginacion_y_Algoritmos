@@ -7,8 +7,7 @@
 
 # 🤖 Asistente de Afiliaciones — (Texto + Imagen)
 
-Los agentes reciben gran volumen de consultas repetitivas, con normativa dispersa y respuestas poco uniformes.  
-Esto genera ⏳ demoras, dependencia de referentes y riesgo de inconsistencias ⚠️.
+Los agentes reciben de manera recurrente preguntas sobre documentación, plazos, circuitos internos y criterios de aplicación normativa, que ya se encuentran descriptos en circulares y protocolos, pero cuya consulta resulta poco ágil en la práctica.
 
 ---
 
