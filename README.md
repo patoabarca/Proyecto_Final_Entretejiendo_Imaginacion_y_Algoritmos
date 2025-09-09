@@ -64,6 +64,10 @@ Incluye:
 - La cache de imágenes evitó regeneraciones innecesarias, optimizando uso de la API.
 - El prototipo alcanzó los objetivos del MVP: consistencia normativa ≥ 90% y reducción de tiempos de respuesta en pruebas simuladas.
 
+## Ejemplo de salida
+
+![Ejemplo de salida del asistente](notebooks/imgs/Muestra_1.png)
+
 ## Conclusiones
 
 El proyecto demostró cómo un asistente basado en **prompt engineering** y una **base de conocimiento estructurada** puede mejorar la gestión interna de Afiliaciones en IOMA.
