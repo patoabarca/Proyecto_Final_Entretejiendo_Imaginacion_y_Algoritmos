@@ -127,7 +127,11 @@ PROYECTO_FINAL_ENTRETEJIENDO_IMAGINACION_Y_ALGORITMOS/
 
 │ └─ imgs/ # Cache de imágenes (auto)
 
-├─ Muestra.png # Captura (opcional)
+├─ Muestra_1.png # (Captura de salida)
+
+├─ Muestra_2.png # (Captura de salida)
+
+├─ Muestra_3.png # (Captura de salida)
 
 ├─ .gitignore
 
